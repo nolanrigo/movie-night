@@ -18,6 +18,7 @@ defmodule MovieNightWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    resources "/movies", MovieController
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,27 @@
+<.header>
+  New Movie
+  <:subtitle>Use this form to manage movie records in your database.</:subtitle>
+</.header>
+
+<.simple_form :let={f} for={@changeset} action={~p"/movies"}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:title]} type="text" label="Title" />
+  <.input field={f[:original_title]} type="text" label="Original title" />
+  <.input
+    field={f[:emojis]}
+    type="select"
+    multiple
+    label="Emojis"
+    options={[{"Option 1", "option1"}, {"Option 2", "option2"}]}
+  />
+  <.input field={f[:description]} type="text" label="Description" />
+  <.input field={f[:release_date]} type="datetime-local" label="Release date" />
+  <.input field={f[:country]} type="text" label="Country" />
+  <:actions>
+    <.button>Save Movie</.button>
+  </:actions>
+</.simple_form>
+
+<.back navigate={~p"/movies"}>Back to movies</.back>
