@@ -11,14 +11,12 @@
   <.input field={f[:original_title]} type="text" label="Original title" />
   <.input
     field={f[:emojis]}
-    type="select"
-    multiple
+    type="text"
     label="Emojis"
-    options={[{"Option 1", "option1"}, {"Option 2", "option2"}]}
   />
-  <.input field={f[:description]} type="text" label="Description" />
-  <.input field={f[:release_date]} type="datetime-local" label="Release date" />
-  <.input field={f[:country]} type="text" label="Country" />
+  <.input field={f[:description]} type="textarea" label="Description" />
+  <.input field={f[:release_date]} type="date" label="Release date" />
+  <.input field={f[:country]} type="select" label="Country" options={CountryNames.alpha2_options} />
   <:actions>
     <.button>Save Movie</.button>
   </:actions>

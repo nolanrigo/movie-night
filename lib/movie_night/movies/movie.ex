@@ -9,7 +9,7 @@ defmodule MovieNight.Movies.Movie do
     field :description, :string
     field :emojis, {:array, :string}
     field :original_title, :string
-    field :release_date, :utc_datetime
+    field :release_date, :date
     field :title, :string
 
     timestamps()

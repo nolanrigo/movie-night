@@ -8,7 +8,7 @@ defmodule MovieNight.Repo.Migrations.CreateMovies do
       add :original_title, :string
       add :emojis, {:array, :string}
       add :description, :string
-      add :release_date, :utc_datetime
+      add :release_date, :date
       add :country, :string
 
       timestamps()

@@ -9,11 +9,7 @@
 
 <.table id="movies" rows={@movies} row_click={&JS.navigate(~p"/movies/#{&1}")}>
   <:col :let={movie} label="Title"><%= movie.title %></:col>
-  <:col :let={movie} label="Original title"><%= movie.original_title %></:col>
   <:col :let={movie} label="Emojis"><%= movie.emojis %></:col>
-  <:col :let={movie} label="Description"><%= movie.description %></:col>
-  <:col :let={movie} label="Release date"><%= movie.release_date %></:col>
-  <:col :let={movie} label="Country"><%= movie.country %></:col>
   <:action :let={movie}>
     <div class="sr-only">
       <.link navigate={~p"/movies/#{movie}"}>Show</.link>

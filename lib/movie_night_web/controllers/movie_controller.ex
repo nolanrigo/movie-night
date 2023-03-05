@@ -15,6 +15,9 @@ defmodule MovieNightWeb.MovieController do
   end
 
   def create(conn, %{"movie" => movie_params}) do
+    # emojis: string -> string[]
+    movie_params = movie_params |> Map.update("emojis", "", &String.split(&1, ""))
+
     case Movies.create_movie(movie_params) do
       {:ok, movie} ->
         conn
@@ -38,6 +41,9 @@ defmodule MovieNightWeb.MovieController do
   end
 
   def update(conn, %{"id" => id, "movie" => movie_params}) do
+    # emojis: string -> string[]
+    movie_params = movie_params |> Map.update("emojis", "", &String.split(&1, ""))
+
     movie = Movies.get_movie!(id)
 
     case Movies.update_movie(movie, movie_params) do

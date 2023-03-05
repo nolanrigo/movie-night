@@ -14,7 +14,7 @@
   <:item title="Emojis"><%= @movie.emojis %></:item>
   <:item title="Description"><%= @movie.description %></:item>
   <:item title="Release date"><%= @movie.release_date %></:item>
-  <:item title="Country"><%= @movie.country %></:item>
+  <:item title="Country"><%= CountryNames.alpha2_names[@movie.country] %></:item>
 </.list>
 
 <.back navigate={~p"/movies"}>Back to movies</.back>
